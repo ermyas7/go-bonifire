@@ -11,15 +11,19 @@ export class ModalImage extends Component {
   render() {
       let {active} = this.state
     return (
-      <div class='modal-image'>
-        <div class='modal-image-active'>
+      <div className='modal-image'>
+        <div className='modal-image-active'>
             <img src={active} alt='cloth'/>
         </div>
-        <div class='modal-image-thumb'>
-            <img src={image1} alt='cloth' style={activeImage}/>
-            <img src={image2} alt='cloth'/>
-            <img src={image3} alt='cloth'/>
-            <img src={image4} alt='cloth'/>
+        <div className='modal-image-thumb'>
+            <img src={image1} alt='cloth' 
+            onClick={()=> this.setState({active: image1})}/>
+            <img src={image2} alt='cloth'
+            onClick={()=> this.setState({active: image2})}/>
+            <img src={image3} alt='cloth'
+            onClick={()=> this.setState({active: image3})}/>
+            <img src={image4} alt='cloth'
+            onClick={()=> this.setState({active: image4})}/>
         </div>
       </div>
     )
