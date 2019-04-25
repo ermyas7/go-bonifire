@@ -1,35 +1,26 @@
 import React from 'react'
+import currency from '../../assets/images/lang.png'
 const Header = (props) => {
   return (
-    <header>
-          <div>
-             <div>
-               
+    <header className='header'>
+             <div className='header-primary'>
+                <div className='header-primary-currency'>
+                    <img src={currency} alt='currency' 
+                      className='header-primary-currency__image'/>
+                      <p>USD</p>
+                      <i className='fa fa-caret-down'></i>
+                </div>
+                <h1>BONIFIRE</h1>
+                <div className='header-primary-cart'>Cart(3)</div>   
             </div>
-            <h1>BONIFIRE</h1>
-            <div></div> 
-          </div>
+            <div className='header-secondary'>
+              <h1>secondary header</h1>
+              <h1>secondary header</h1>
+              <h1>secondary header</h1>  
+            </div> 
     </header>
   )
 }
-const styles = {
-  header : {
-      height: 80,
-      width: '100%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      paddingLeft: 50,
-      paddingRight: 50,
-      borderBottomColor: '#bbb',
-      borderBottomWidth: 1,
-      borderBottomStyle: 'solid'
-    },
-    heading: {
-      color: '#00a1e7',
-      fontSize: '40px',
-      textTransform: 'uppercase'
-    }
-}
+
 
   export default Header
