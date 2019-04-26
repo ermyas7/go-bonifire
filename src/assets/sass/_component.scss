@@ -1,4 +1,21 @@
 /////////////////////////////////////// 
+/////////// popup header style 
+
+.popup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20%;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    background-color: rgba(54,54,54, 0.15);
+
+    span{
+        cursor: pointer;
+    }
+}
+
+/////////////////////////////////////// 
 //////////// navigation on hover///// 
 
 .navigation{

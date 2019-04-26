@@ -34,13 +34,20 @@ export class ModalDescription extends Component {
         let name = this.props.data.name
         if(color !=='' && size!=='' && quantity !== 0){
             this.props.addToCart({color, size, quantity, name})
+            this.setState({error: ''})
             this.clearSelection()
+        }
+        else{
+            this.setState({error: 'Please select all the details!'})
         }
     }
   render() {
       let{data} = this.props
-      let {color, size, quantity} = this.state
+      let {color, size, quantity, error} = this.state
       data = {...data, color, size, quantity}
+      let Error =
+      error !==''? <p style={{color: 'red', fontSize: '1.6rem'}}>{error}</p>
+      : null;
     return (
       <div className='modal-description'>
         <div className='modal-description-back'>
@@ -85,6 +92,7 @@ export class ModalDescription extends Component {
             setCheckOutDetail={this.setCheckOutDetail}
             value={data.quantity}/>
         </div>
+        {Error} 
         <p onClick={this.clearSelection} style={clear}>Clear Selection</p>
         <div className='modal-description-add'>
             <div className='modal-description-add-btn btn btn-black'

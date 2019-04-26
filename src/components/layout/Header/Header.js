@@ -80,7 +80,7 @@ class Header extends Component{
                 </div>
 
               </div>
-              <NavHover status={this.state.status}/> 
+              <NavHover status={this.state.status}/>
       </header>
     )
   }  
