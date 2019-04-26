@@ -18,11 +18,11 @@ class CustomSelectOption extends Component {
       )
     })
     return (
-      <div style={container}>
-        <p style={text}>{type}</p>  
+      <div className='select-item'>
+        <p className='select-item-text'>{type}</p>  
         <select value={value}
          onChange={this.handleChange}
-         style={select}>
+         className='select-item-input'>
         <option value=''>Select {type}</option>
             {options}
         </select>
@@ -31,23 +31,5 @@ class CustomSelectOption extends Component {
   }
 }
 
-const container = {
-  marginRight: '1rem'
-}
-
-const select = {
-  border: 'solid var(--color-grey-dark-1) 1px',
-  background: 'none',
-  padding: '.3rem 4rem .3rem .5rem',
-  color: 'var(--color-grey-dark-1)'
-
-}
-
-const text = {
-  fontSize: '1.5rem',
-  fontWeight: '500',
-  textTransform: 'uppercase',
-  marginBottom: '1rem'
-}
 
 export default CustomSelectOption

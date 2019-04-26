@@ -10,28 +10,17 @@ class QuantityInput extends Component {
   render() {
     let {value} = this.props
     return (
-        <div>
-            <p style={text}>qty</p>
+        <div className='select-item'>
+            <p className='select-item-text'>qty</p>
             <input type='number'
              name="quantity" min="1"
              value={value}
              onInput={this.changeHandler}
              onChange={this.changeHandler}
-                style={quantity}/>
+             className='select-item-input quantity'/>
         </div>
     )
   }
 }
 
-const quantity = {
-    fontSize: '1.5rem',
-    padding: '.3rem',
-}
-
-const text = {
-    fontSize: '1.5rem',
-    fontWeight: '500',
-    textTransform: 'uppercase',
-    marginBottom: '1rem'
-}
 export default QuantityInput

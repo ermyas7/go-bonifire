@@ -74,7 +74,7 @@ export class ModalDescription extends Component {
             </p>
         </div>
         <Features features={data.features}/>
-        <div style={selection}>
+        <div className='select'>
             <Select type='color' data={data.colors} 
             setCheckOutDetail={this.setCheckOutDetail}
             value={data.color}/>
@@ -104,11 +104,6 @@ export class ModalDescription extends Component {
     )
   }
 }
-
-const selection = {
-    display: 'flex',
-    justifyContent: 'space-between'
-} 
 
 const clear = {
     fontWeight: '500',
