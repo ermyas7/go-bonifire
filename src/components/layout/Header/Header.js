@@ -8,7 +8,12 @@ class Header extends Component{
   }
 
   toggleNav = (value) => {
-      this.setState({status: value})
+      if(this.state.status === 'navigation'){
+        this.setState({status: value})
+      }
+      else{
+        this.setState({status: 'navigation'})
+      }
   }
   render(){
     return (
@@ -32,8 +37,7 @@ class Header extends Component{
 
             <i className='fa fa-bars bars' 
             onClick={() => this.toggleNav('navigation-active')}
-            onMouseOver={() => this.toggleNav('navigation-active')}
-            onMouseLeave={() => this.toggleNav('navigation') }></i>
+            onMouseOver={() => this.toggleNav('navigation-active')}></i>
             <div className='header-secondary-nav'>
                 <ul className='header-secondary-nav__items'>
 
@@ -55,7 +59,7 @@ class Header extends Component{
                       <i className='fa fa-caret-down'
                       onClick={() => this.toggleNav('navigation-women')}
                       onMouseOver={() => this.toggleNav('navigation-women')}
-                      onMouseLeave={() => this.toggleNav('navigation') }></i>
+        ></i>
                   </li>
                   <li className='header-secondary-nav__item'>
                       <Link to={`${process.env.PUBLIC_URL}`}  className='header-secondary-nav__link'>Lookbook</Link>
