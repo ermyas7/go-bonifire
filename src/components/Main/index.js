@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ModalImage from './ModalImage'
+import ModalDescription from './ModalDescription'
 
 export class index extends Component {
   render() {
@@ -10,7 +11,7 @@ export class index extends Component {
             <ModalImage/>
         </div>
         <div className='content-description'>
-            something else here
+            <ModalDescription/>
         </div>
 
      </main>

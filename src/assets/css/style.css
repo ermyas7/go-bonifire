@@ -1,4 +1,6 @@
 :root {
+  --color-primary: #0099CC;
+  --color-primary-light: #66CCFF;
   --color-grey-light-1: #faf9f9;
   --color-grey-light-2: #f4f2f2;
   --color-grey-light-3: #f0eeee;
@@ -26,7 +28,7 @@ html {
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  line-height: 1.6; }
+  line-height: 1.4; }
 
 .content {
   padding: 4rem 30rem 7rem 30rem;
@@ -120,3 +122,60 @@ body {
     width: calc((100% - 6rem)/4);
     height: calc((100% - 6rem)/4);
     cursor: pointer; }
+
+.heading-secondary {
+  font-size: 2.3rem;
+  font-weight: 300; }
+
+.modal-description {
+  font-size: 1.5rem; }
+  .modal-description > *:not(:last-child) {
+    margin-bottom: 1.5rem; }
+  .modal-description-back a {
+    color: var(--color-grey-dark-1);
+    text-decoration: none; }
+  .modal-description-back span {
+    color: var(--color-primary); }
+  .modal-description-rating {
+    display: flex; }
+    .modal-description-rating > *:not(:last-child) {
+      margin-right: 1rem;
+      color: var(--color-grey-dark-1); }
+    .modal-description-rating > *:last-child {
+      text-transform: uppercase;
+      padding-left: 1rem;
+      border-left: solid var(--color-grey-dark-1) 1px;
+      text-decoration: underline;
+      cursor: pointer; }
+  .modal-description-price {
+    font-size: 2.3rem;
+    color: var(--color-primary); }
+  .modal-description-info p {
+    font-weight: 500; }
+  .modal-description-info span {
+    color: var(--color-primary-light); }
+  .modal-description-text {
+    color: var(--color-grey-dark-1); }
+  .modal-description-feature {
+    color: var(--color-grey-dark-1);
+    margin-left: .5rem; }
+  .modal-description-selection {
+    display: flex;
+    justify-content: space-between; }
+  .modal-description-add {
+    display: flex;
+    justify-content: space-between; }
+
+.btn {
+  padding: 1rem 3rem;
+  display: inline-block;
+  cursor: pointer;
+  text-transform: uppercase; }
+  .btn i {
+    display: inline-block;
+    margin-right: 5px; }
+  .btn-black {
+    background-color: #000;
+    color: #fff; }
+  .btn-white {
+    border: solid var(--color-grey-dark-1) 1px; }

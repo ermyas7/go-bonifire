@@ -30,8 +30,4 @@ export class ModalImage extends Component {
   }
 }
 
-const activeImage = {
-    border: 'solid var(--color-golden) 2px'
-}
-
 export default ModalImage
