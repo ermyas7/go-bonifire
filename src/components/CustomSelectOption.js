@@ -1,36 +1,50 @@
 import React, { Component } from 'react'
 
-export class CustomSelectOption extends Component {
+class CustomSelectOption extends Component {
     state = {
         value: 'Select color'
     }
-    handleChange = (text) => {
-
+    handleChange = (evt) => {
+      this.setState({value: evt.target.value})
   }  
   render() {
+    let {data, type} = this.props;
+    let options = data.map((item, index) => {
+      return(
+        <option value={item} key={index}>{item}</option>
+      )
+    })
     return (
-      <div>
-        <p>Color</p>  
+      <div style={container}>
+        <p style={text}>{type}</p>  
         <select value={this.state.value}
          onChange={this.handleChange}
          style={select}>
-        <option value="Select color">Select Color</option>
-            <option value="grapefruit">Grapefruit</option>
-            <option value="lime">Lime</option>
-            <option value="coconut">Coconut</option>
-            <option value="mango">Mango</option>
+        <option value="Select color">Select {type}</option>
+            {options}
         </select>
       </div>
     )
   }
 }
 
+const container = {
+  marginRight: '1rem'
+}
+
 const select = {
   border: 'solid var(--color-grey-dark-1) 1px',
   background: 'none',
-  padding: '.2rem .5rem',
+  padding: '.3rem 4rem .3rem .5rem',
   color: 'var(--color-grey-dark-1)'
 
+}
+
+const text = {
+  fontSize: '1.5rem',
+  fontWeight: '500',
+  textTransform: 'uppercase',
+  marginBottom: '1rem'
 }
 
 export default CustomSelectOption

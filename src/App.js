@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Header from './components/layout/Header/Header'
-import Main from './components/Main'
+import WomenCloth from './Pages/WomenCloth'
 
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 class  App extends Component{
@@ -10,7 +10,7 @@ class  App extends Component{
           <div className="App">
             <Header/>
             <Route path={`${process.env.PUBLIC_URL}/`} 
-            render ={() => <Main/>}/>
+            render ={() => <WomenCloth/>}/>
           </div>
       </Router>
     );

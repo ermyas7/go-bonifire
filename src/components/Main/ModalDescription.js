@@ -3,12 +3,14 @@ import {Link} from 'react-router-dom'
 import Review from '../ReviewStars'
 import Select from '../CustomSelectOption'
 import QuantitySelection from '../QuantityInput'
-
+import Features from './ModalFeatures'
 import Share from '../ShareContent'
 
 
 export class ModalDescription extends Component {
   render() {
+      let{data} = this.props
+      console.log(data.colors)
     return (
       <div className='modal-description'>
         <div className='modal-description-back'>
@@ -19,41 +21,32 @@ export class ModalDescription extends Component {
         </div>
 
         <h2 className='heading-secondary'>
-            The Atelier Tailored Coat
+            {data.name}
         </h2>
         <div className='modal-description-rating'>
             <Review/>
-            <p>3 Review(s)</p>
+            <p>{data.reviews} Review(s)</p>
             <p>Add a review</p>
         </div>
         <div className='modal-description-price'>
-            $499.00
+            ${data.price}
         </div>
 
         <div className='modal-description-info'>
-            <p>Availability : <span> In stock </span> </p>
-            <p>Product Code : <span> #4657 </span> </p>
-            <p>Tages : <span> Fashion, Hood, Classic </span> </p>
+            <p>Availability : <span> {data.availability} </span> </p>
+            <p>Product Code : <span> {data.productcode} </span> </p>
+            <p>Tages : <span> {data.tages} </span> </p>
         </div>
 
         <div className='modal-description-text'>
             <p>
-            simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+             {data.description}
             </p>
         </div>
-
-        <div className='modal-description-feature'>
-            <ul>
-                <li>Dark Blue</li>
-                <li>Regular fit</li>
-                <li>100% Cotton</li>
-                <li>Free Shipping with 4 day delivery</li>
-            </ul>
-        </div>
-
-        <div className='modal-description-selection'>
-            <Select/>
-            <Select/>
+        <Features features={data.features}/>
+        <div style={selection}>
+            <Select type='color' data={data.colors}/>
+            <Select type='size'  data={data.sizes}/>
             <QuantitySelection/>
         </div>
         <p>Clear Selection</p>
@@ -74,5 +67,10 @@ export class ModalDescription extends Component {
     )
   }
 }
+
+const selection = {
+    display: 'flex',
+    justifyContent: 'space-between'
+} 
 
 export default ModalDescription

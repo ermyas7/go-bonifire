@@ -1,0 +1,24 @@
+{
+    "name": "the atelier tailored coat",
+    "description": "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    "reviews": 5,
+    "price": 499.00,
+    "availability": "in stock",
+    "productcode": "#43454",
+    "tages": "Fashion, hoodi , classic",
+    "features": [
+        "Dark Blue",
+        "Regular fit",
+        "100% Cotton",
+        "Free Shipping with 4 day delivery"
+    ],
+    "colors": [
+        "black",
+        "white",
+        "red",
+        "blue"
+    ],
+    "sizes": [
+        26, 27, 28, 29, 30
+    ]
+}

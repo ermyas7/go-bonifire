@@ -8,28 +8,32 @@ class QuantityInput extends Component {
   changeHandler = (value) => {
       console.log('from handler')
       console.log(value.target.value)
-    this.setState({value})
+    this.setState({value: value.target.value})
   }
   render() {
     return (
         <div>
-            <p>qty</p>
+            <p style={text}>qty</p>
             <input type='number'
              name="quantity" min="1"
              value={this.state.value}
              onInput={this.changeHandler}
              onChange={this.changeHandler}
                 style={quantity}/>
-    </div>
+        </div>
     )
   }
 }
 
 const quantity = {
     fontSize: '1.5rem',
-    width: '5rem',
-    height: '2rem',
-    padding: '.3rem'
+    padding: '.3rem',
 }
 
+const text = {
+    fontSize: '1.5rem',
+    fontWeight: '500',
+    textTransform: 'uppercase',
+    marginBottom: '1rem'
+}
 export default QuantityInput

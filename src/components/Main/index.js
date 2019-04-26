@@ -11,7 +11,7 @@ export class index extends Component {
             <ModalImage/>
         </div>
         <div className='content-description'>
-            <ModalDescription/>
+            <ModalDescription data={this.props.data}/>
         </div>
 
      </main>
