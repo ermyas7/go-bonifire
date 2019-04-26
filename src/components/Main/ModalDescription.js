@@ -5,19 +5,23 @@ import Select from '../CustomSelectOption'
 import QuantitySelection from '../QuantityInput'
 import Features from './ModalFeatures'
 import Share from '../ShareContent'
-
+import Error from '../Error'
+import Success from '../Success';
 
 export class ModalDescription extends Component {
     state = {
         color: '',
         size: '',
         quantity: 1,
-        error: ''
+        error: '',
+        success: ''
       }
       
     setCheckOutDetail = (val) => {
         let {name, value} = val
         this.setState({[name]: value})
+        this.setState({success: ''})
+        this.setState({error: ''})
     } 
 
     clearSelection = () => {
@@ -26,7 +30,7 @@ export class ModalDescription extends Component {
             size: '',
             quantity: 1
         })
-        console.log('clearing')
+        this.setState({error: ''})
     }
     
     addToCart = () => {
@@ -35,19 +39,19 @@ export class ModalDescription extends Component {
         if(color !=='' && size!=='' && quantity !== 0){
             this.props.addToCart({color, size, quantity, name})
             this.setState({error: ''})
+            this.setState({success: 'Item added to cart! go to cart to check'})
             this.clearSelection()
         }
         else{
             this.setState({error: 'Please select all the details!'})
+            this.setState({success: ''})
         }
     }
   render() {
       let{data} = this.props
-      let {color, size, quantity, error} = this.state
+      let {color, size, quantity, error, success} = this.state
       data = {...data, color, size, quantity}
-      let Error =
-      error !==''? <p style={{color: 'red', fontSize: '1.6rem'}}>{error}</p>
-      : null;
+
     return (
       <div className='modal-description'>
         <div className='modal-description-back'>
@@ -81,6 +85,7 @@ export class ModalDescription extends Component {
             </p>
         </div>
         <Features features={data.features}/>
+        <Success success={success}/>
         <div className='select'>
             <Select type='color' data={data.colors} 
             setCheckOutDetail={this.setCheckOutDetail}
@@ -92,7 +97,7 @@ export class ModalDescription extends Component {
             setCheckOutDetail={this.setCheckOutDetail}
             value={data.quantity}/>
         </div>
-        {Error} 
+        <Error error={error}/> 
         <p onClick={this.clearSelection} style={clear}>Clear Selection</p>
         <div className='modal-description-add'>
             <div className='modal-description-add-btn btn btn-black'
