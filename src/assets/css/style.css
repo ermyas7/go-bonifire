@@ -28,12 +28,57 @@ html {
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  line-height: 1.4; }
+  line-height: 1.6; }
+
+.header {
+  position: relative; }
 
 .content {
   padding: 4rem 30rem 7rem 30rem;
   display: flex;
   justify-content: space-between; }
+
+.navigation {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 14rem;
+  left: 30rem; }
+  .navigation-active {
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+    top: 14rem;
+    left: 30rem; }
+  .navigation-women {
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+    top: 14rem;
+    left: 60rem; }
+  .navigation-men {
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+    top: 14rem;
+    left: 48rem; }
+  .navigation-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; }
+    .navigation-list-item__link {
+      text-decoration: none;
+      color: var(--color-grey-dark-1);
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      display: inline-block;
+      background-color: var(--color-grey-light-4);
+      width: 10rem;
+      padding: .3rem 1rem;
+      transition: all .2s; }
+      .navigation-list-item__link:hover {
+        background-color: var(--color-grey-light-3); }
 
 .header-primary {
   padding: 0 30rem;
@@ -76,6 +121,8 @@ body {
   border-top: var(--line-dark);
   border-bottom: var(--line-dark);
   font-size: 1.7rem; }
+  .header-secondary i {
+    cursor: pointer; }
   .header-secondary-nav__items {
     display: flex;
     list-style: none; }
@@ -110,18 +157,19 @@ body {
   margin-left: 2rem;
   flex: 1; }
 
-.modal-image img {
+.modal-image {
   width: 100%; }
-
-.modal-image-thumb {
-  display: flex;
-  margin-top: 2rem; }
-  .modal-image-thumb > *:not(:last-child) {
-    margin-right: 2rem; }
-  .modal-image-thumb img {
-    width: calc((100% - 6rem)/4);
-    height: calc((100% - 6rem)/4);
-    cursor: pointer; }
+  .modal-image img {
+    width: 100%; }
+  .modal-image-thumb {
+    display: flex;
+    margin-top: 2rem; }
+    .modal-image-thumb > *:not(:last-child) {
+      margin-right: 2rem; }
+    .modal-image-thumb img {
+      width: calc((100% - 6rem)/4);
+      height: calc((100% - 6rem)/4);
+      cursor: pointer; }
 
 .heading-secondary {
   font-size: 2.3rem;
@@ -130,7 +178,7 @@ body {
 .modal-description {
   font-size: 1.5rem; }
   .modal-description > *:not(:last-child) {
-    margin-bottom: 1.5rem; }
+    margin-bottom: 1rem; }
   .modal-description-back a {
     color: var(--color-grey-dark-1);
     text-decoration: none; }
@@ -162,6 +210,8 @@ body {
   .modal-description-selection {
     display: flex;
     justify-content: space-between; }
+    .modal-description-selection > *:not(:last-child) {
+      margin-right: 2rem; }
   .modal-description-add {
     display: flex;
     justify-content: space-between; }

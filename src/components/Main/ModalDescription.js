@@ -29,7 +29,7 @@ export class ModalDescription extends Component {
             <p>Add a review</p>
         </div>
         <div className='modal-description-price'>
-            ${data.price}
+            ${data.price + '.00'}
         </div>
 
         <div className='modal-description-info'>

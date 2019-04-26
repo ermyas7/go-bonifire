@@ -1,3 +1,67 @@
+/////////////////////////////////////// 
+//////////// navigation on hover///// 
+
+.navigation{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 14rem;
+    left: 30rem;
+    
+    &-active{
+        visibility: visible;
+        opacity: 1;
+        position: absolute;
+        top: 14rem;
+        left: 30rem;
+    }
+
+    &-women{
+        visibility: visible;
+        opacity: 1;
+        position: absolute;
+        top: 14rem;
+        left: 60rem;
+    }
+
+    &-men{
+        visibility: visible;
+        opacity: 1;
+        position: absolute;
+        top: 14rem;
+        left: 48rem;
+    }
+
+    &-list{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        &-item{
+
+        }
+
+        &-item__link{
+            text-decoration: none;
+            color: var(--color-grey-dark-1);
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            display: inline-block;
+            background-color: var(--color-grey-light-4);
+            width: 10rem;
+            padding: .3rem 1rem;
+            transition: all .2s;
+
+            &:hover{
+                background-color: var(--color-grey-light-3); 
+            }
+            
+        }
+    }
+
+}
+
+
 ///////////////////////////////////// 
 /////////// primary header ///////// 
 
@@ -64,6 +128,10 @@
     border-top: var(--line-dark);
     border-bottom: var(--line-dark);
     font-size: 1.7rem;
+
+    i{
+        cursor: pointer;
+    }
 
     &-nav{
 
@@ -257,3 +325,5 @@
         border: solid var(--color-grey-dark-1) 1px;
     }
 }
+
+
