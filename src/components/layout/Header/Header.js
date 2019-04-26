@@ -8,13 +8,7 @@ class Header extends Component{
   }
 
   toggleNav = (value) => {
-    if(this.state.status === 'navigation'){
       this.setState({status: value})
-    }
-    else{
-      this.setState({status: 'navigation'})
-    }
-    
   }
   render(){
     return (
@@ -37,24 +31,30 @@ class Header extends Component{
 
             <i className='fa fa-bars bars' 
             onClick={() => this.toggleNav('navigation-active')}
-            onMouseOver={() => this.toggleNav('navigation-active')}></i>
+            onMouseOver={() => this.toggleNav('navigation-active')}
+            onMouseLeave={() => this.toggleNav('navigation') }></i>
             <div className='header-secondary-nav'>
                 <ul className='header-secondary-nav__items'>
 
                   <li className='header-secondary-nav__item'>
-                      <a href='#' className='header-secondary-nav__link'>Home</a>
+                      <a href='#' 
+                      className='header-secondary-nav__link'>Home</a>
                   </li>
                   <li className='header-secondary-nav__item'>
-                      <a href='#' className='header-secondary-nav__link'>Men</a>
+                      <a href='#' 
+                      className='header-secondary-nav__link'>Men</a>
                       <i className='fa fa-caret-down' 
                       onClick={() => this.toggleNav('navigation-men')}
-                      onMouseOver={() => this.toggleNav('navigation-men')}></i>
+                      onMouseOver={() => this.toggleNav('navigation-men')}
+                      onMouseLeave={() => this.toggleNav('navigation')}></i>
                   </li>
                   <li className='header-secondary-nav__item'>
-                      <a href='#' className='header-secondary-nav__link'>Women</a>
+                      <a href='#' 
+                      className='header-secondary-nav__link'>Women</a>
                       <i className='fa fa-caret-down'
                       onClick={() => this.toggleNav('navigation-women')}
-                      onMouseOver={() => this.toggleNav('navigation-women')}></i>
+                      onMouseOver={() => this.toggleNav('navigation-women')}
+                      onMouseLeave={() => this.toggleNav('navigation') }></i>
                   </li>
                   <li className='header-secondary-nav__item'>
                       <a href='#' className='header-secondary-nav__link'>Lookbook</a>
