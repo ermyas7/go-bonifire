@@ -1,7 +1,7 @@
 import React from 'react'
-import image from '../../assets/images/women_pink.jpg'
+import image from '../../assets/images/women_black.jpg'
 
-const CartItems = () => {
+const CartItems = ({item}) => {
   return (
     <div>
       <div className='cart'>
@@ -9,10 +9,10 @@ const CartItems = () => {
             <img src={image} alt='product'/>
         </div>
         <div className='cart-item'>
-            <h2 className='cart-item-heading'>nice cloth</h2>
-            <p>color : black</p>
-            <p>size : 22</p>
-            <p>quantity : 1</p>
+            <h2 className='cart-item-heading'>{item.name}</h2>
+            <p>color : {item.color}</p>
+            <p>size : {item.size}</p>
+            <p>quantity : {item.quantity}</p>
         </div>
       </div>
     </div>

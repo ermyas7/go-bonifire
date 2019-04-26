@@ -1,22 +1,20 @@
 import React, { Component } from 'react'
 
 class QuantityInput extends Component {
-  state = {
-      value: 1
-  }
-  
+
   changeHandler = (value) => {
-      console.log('from handler')
-      console.log(value.target.value)
-    this.setState({value: value.target.value})
+    this.props.setCheckOutDetail({
+      name: 'quantity',
+      value:value.target.value})
   }
   render() {
+    let {value} = this.props
     return (
         <div>
             <p style={text}>qty</p>
             <input type='number'
              name="quantity" min="1"
-             value={this.state.value}
+             value={value}
              onInput={this.changeHandler}
              onChange={this.changeHandler}
                 style={quantity}/>

@@ -5,7 +5,7 @@ import Main from '../../components/Main'
 export class index extends Component {
   render() {
     return (
-      <Main data={cloth}/>
+      <Main data={cloth} addToCart={this.props.addToCheckOut}/>
     )
   }
 }

@@ -8,9 +8,39 @@ import Share from '../ShareContent'
 
 
 export class ModalDescription extends Component {
+    state = {
+        color: '',
+        size: '',
+        quantity: 1,
+        error: ''
+      }
+      
+    setCheckOutDetail = (val) => {
+        let {name, value} = val
+        this.setState({[name]: value})
+    } 
+
+    clearSelection = () => {
+        this.setState({
+            color: '',
+            size: '',
+            quantity: 1
+        })
+        console.log('clearing')
+    }
+    
+    addToCart = () => {
+        let {color, size, quantity} = this.state
+        let name = this.props.data.name
+        if(color !=='' && size!=='' && quantity !== 0){
+            this.props.addToCart({color, size, quantity, name})
+            this.clearSelection()
+        }
+    }
   render() {
       let{data} = this.props
-      console.log(data.colors)
+      let {color, size, quantity} = this.state
+      data = {...data, color, size, quantity}
     return (
       <div className='modal-description'>
         <div className='modal-description-back'>
@@ -45,13 +75,20 @@ export class ModalDescription extends Component {
         </div>
         <Features features={data.features}/>
         <div style={selection}>
-            <Select type='color' data={data.colors}/>
-            <Select type='size'  data={data.sizes}/>
-            <QuantitySelection/>
+            <Select type='color' data={data.colors} 
+            setCheckOutDetail={this.setCheckOutDetail}
+            value={data.color}/>
+            <Select type='size'  data={data.sizes}
+            setCheckOutDetail={this.setCheckOutDetail}
+            value={data.size}/>
+            <QuantitySelection 
+            setCheckOutDetail={this.setCheckOutDetail}
+            value={data.quantity}/>
         </div>
-        <p>Clear Selection</p>
+        <p onClick={this.clearSelection} style={clear}>Clear Selection</p>
         <div className='modal-description-add'>
-            <div className='modal-description-add-btn btn btn-black'>
+            <div className='modal-description-add-btn btn btn-black'
+            onClick={this.addToCart}>
                 add to cart
             </div>
             <div className='modal-description-add-btn btn btn-white'>
@@ -72,5 +109,12 @@ const selection = {
     display: 'flex',
     justifyContent: 'space-between'
 } 
+
+const clear = {
+    fontWeight: '500',
+    textDecoration: 'underline',
+    cursor: 'pointer',
+    display: 'block'
+}
 
 export default ModalDescription

@@ -1,7 +1,7 @@
 import React , {Component} from 'react'
 import currency from '../../../assets/images/lang.png'
 import NavHover  from '../../NavHover'
-
+import {Link} from 'react-router-dom'
 class Header extends Component{
   state = {
     status: 'navigation'
@@ -24,7 +24,8 @@ class Header extends Component{
 
         <h1 className='heading-primary'>BONIFIRE</h1>
 
-        <div className='header-primary-cart'>Cart(3)</div>
+        <div className='header-primary-cart'>
+        <Link to={`${process.env.PUBLIC_URL}/cart`}>Cart({this.props.cartCount})</Link></div>
 
       </div>
           <div className='header-secondary'>
@@ -37,33 +38,33 @@ class Header extends Component{
                 <ul className='header-secondary-nav__items'>
 
                   <li className='header-secondary-nav__item'>
-                      <a href='#' 
-                      className='header-secondary-nav__link'>Home</a>
+                  <Link to={`${process.env.PUBLIC_URL}`} 
+                      className='header-secondary-nav__link'>Home</Link>
                   </li>
                   <li className='header-secondary-nav__item'>
-                      <a href='#' 
-                      className='header-secondary-nav__link'>Men</a>
+                  <Link to={`${process.env.PUBLIC_URL}`}  
+                      className='header-secondary-nav__link'>Men</Link>
                       <i className='fa fa-caret-down' 
                       onClick={() => this.toggleNav('navigation-men')}
                       onMouseOver={() => this.toggleNav('navigation-men')}
                       onMouseLeave={() => this.toggleNav('navigation')}></i>
                   </li>
                   <li className='header-secondary-nav__item'>
-                      <a href='#' 
-                      className='header-secondary-nav__link'>Women</a>
+                      <Link to={`${process.env.PUBLIC_URL}`}  
+                      className='header-secondary-nav__link'>Women</Link>
                       <i className='fa fa-caret-down'
                       onClick={() => this.toggleNav('navigation-women')}
                       onMouseOver={() => this.toggleNav('navigation-women')}
                       onMouseLeave={() => this.toggleNav('navigation') }></i>
                   </li>
                   <li className='header-secondary-nav__item'>
-                      <a href='#' className='header-secondary-nav__link'>Lookbook</a>
+                      <Link to={`${process.env.PUBLIC_URL}`}  className='header-secondary-nav__link'>Lookbook</Link>
                   </li>
                   <li className='header-secondary-nav__item'>
-                      <a href='#' className='header-secondary-nav__link'>About</a>
+                      <Link to={`${process.env.PUBLIC_URL}`}  className='header-secondary-nav__link'>About</Link>
                   </li>
                   <li className='header-secondary-nav__item'>
-                      <a href='#' className='header-secondary-nav__link'>Blog</a>
+                      <Link to={`${process.env.PUBLIC_URL}`}  className='header-secondary-nav__link'>Blog</Link>
                   </li>
                 </ul>
 

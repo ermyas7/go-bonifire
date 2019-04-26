@@ -54,10 +54,10 @@
         opacity: 1;
         position: absolute;
         top: 14rem;
-        left: 50rem;
+        left: 60rem;
 
         @media only screen and (min-width: $bp-xlargest) {
-            left: 60rem;
+            left: 70rem;
           }
     
           @media only screen and (max-width: $bp-largest) {
@@ -81,10 +81,10 @@
         opacity: 1;
         position: absolute;
         top: 14rem;
-        left: 38rem;
+        left: 48rem;
 
         @media only screen and (min-width: $bp-xlargest) {
-            left: 48rem;
+            left: 56rem;
           }
     
           @media only screen and (max-width: $bp-largest) {
@@ -191,6 +191,11 @@
         color: var(--color-grey-dark-1);
         font-size: 1.7rem;
         font-weight: 500;
+
+        a{
+            text-decoration: none;
+            color: currentColor;
+        }
     }
 
 }
@@ -437,7 +442,7 @@
 ////////// cart style ///////////////////////// 
 ////////////////////////////////////////////////
 .cart{
-    padding: 2rem 40rem;
+    padding: 2rem 10rem;
     display: flex;
     justify-content: space-between;
     background-color: var(--color-grey-light-1);
@@ -454,7 +459,7 @@
 
 
         &-heading{
-            font-size: 2.5rem;
+            font-size: 2.0rem;
             font-weight: 300;
             text-transform: uppercase;
         }

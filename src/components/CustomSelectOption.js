@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
 
 class CustomSelectOption extends Component {
-    state = {
-        value: 'Select color'
-    }
+
     handleChange = (evt) => {
-      this.setState({value: evt.target.value})
+      let {value} = evt.target
+      console.log(this.props)
+      if(value !== ''){
+        this.props.setCheckOutDetail({
+          name: this.props.type,value})
+      }
   }  
   render() {
-    let {data, type} = this.props;
+    let {data, type, value} = this.props;
     let options = data.map((item, index) => {
       return(
         <option value={item} key={index}>{item}</option>
@@ -17,10 +20,10 @@ class CustomSelectOption extends Component {
     return (
       <div style={container}>
         <p style={text}>{type}</p>  
-        <select value={this.state.value}
+        <select value={value}
          onChange={this.handleChange}
          style={select}>
-        <option value="Select color">Select {type}</option>
+        <option value=''>Select {type}</option>
             {options}
         </select>
       </div>
