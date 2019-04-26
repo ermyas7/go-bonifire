@@ -20,6 +20,17 @@
     --line-dark: 1px solid var(--color-grey-light-4);
 }
 
+//break point variables
+$bp-xlargest: 100em; //1600px
+$bp-largest: 75em; //1200px
+$bp-xlarge: 60em;  //1040px
+$bp-large: 68.75em; //1100px
+$bp-mediam: 56.25em; //900px
+$bp-small: 45em; //720px
+$bp-smallest: 31.25em; //500px
+
+
+
 *{
     padding: 0;
     margin: 0;
@@ -32,6 +43,14 @@
 html{
     box-sizing: border-box;
     font-size: 62.5%;
+
+    @media only screen and (min-width: $bp-xlargest) {
+        font-size: 75%;
+      }
+
+    @media only screen and (max-width: $bp-mediam) {
+        font-size: 50%;
+      }
 }
 
 body{

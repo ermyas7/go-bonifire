@@ -6,14 +6,47 @@
     opacity: 0;
     position: absolute;
     top: 14rem;
-    left: 30rem;
+    left: 20rem;
+
+    @media only screen and (min-width: $bp-xlargest) {
+        left: 30rem;
+      }
+
+      @media only screen and (max-width: $bp-largest) {
+        left:  10rem;
+      }
+
+      @media only screen and (max-width: $bp-large) {
+        left:  6rem;
+      }
+
+      @media only screen and (max-width: $bp-mediam) {
+        left:  2rem;
+      }
     
     &-active{
         visibility: visible;
         opacity: 1;
         position: absolute;
         top: 14rem;
-        left: 30rem;
+        left: 20rem;
+
+        @media only screen and (min-width: $bp-xlargest) {
+            left: 30rem;
+          }
+    
+          @media only screen and (max-width: $bp-largest) {
+            left:  10rem;
+          }
+    
+          @media only screen and (max-width: $bp-large) {
+            left:  6rem;
+          }
+    
+          @media only screen and (max-width: $bp-mediam) {
+            left:  2rem;
+          }
+        
     }
 
     &-women{
@@ -21,7 +54,26 @@
         opacity: 1;
         position: absolute;
         top: 14rem;
-        left: 60rem;
+        left: 50rem;
+
+        @media only screen and (min-width: $bp-xlargest) {
+            left: 60rem;
+          }
+    
+          @media only screen and (max-width: $bp-largest) {
+            left:  40rem;
+          }
+    
+          @media only screen and (max-width: $bp-large) {
+            left:  36rem;
+          }
+    
+          @media only screen and (max-width: $bp-mediam) {
+            left:  32rem;
+          }
+        
+
+        
     }
 
     &-men{
@@ -29,7 +81,24 @@
         opacity: 1;
         position: absolute;
         top: 14rem;
-        left: 48rem;
+        left: 38rem;
+
+        @media only screen and (min-width: $bp-xlargest) {
+            left: 48rem;
+          }
+    
+          @media only screen and (max-width: $bp-largest) {
+            left:  28rem;
+          }
+    
+          @media only screen and (max-width: $bp-large) {
+            left:  24rem;
+          }
+    
+          @media only screen and (max-width: $bp-mediam) {
+            left:  20rem;
+          }
+        
     }
 
     &-list{
@@ -66,11 +135,27 @@
 /////////// primary header ///////// 
 
 .header-primary{
-    padding: 0 30rem;
+    padding: 0 20rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 8rem;
+
+    @media only screen and (min-width: $bp-xlargest) {
+        padding: 0 30rem;
+      }
+
+      @media only screen and (max-width: $bp-largest) {
+        padding: 0 10rem;
+      }
+
+      @media only screen and (max-width: $bp-large) {
+        padding: 0 6rem;
+      }
+
+      @media only screen and (max-width: $bp-mediam) {
+        padding: 0 2rem;
+      }
 
     &-currency{
         display: flex;
@@ -120,7 +205,7 @@
 //////// secondary heading //// 
 
 .header-secondary{
-    padding: 0 30rem;
+    padding: 0 20rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -129,11 +214,30 @@
     border-bottom: var(--line-dark);
     font-size: 1.7rem;
 
+    @media only screen and (min-width: $bp-xlargest) {
+        padding: 0 30rem;
+      }
+
+      @media only screen and (max-width: $bp-largest) {
+        padding: 0 10rem;
+      }
+
+      @media only screen and (max-width: $bp-large) {
+        padding: 0 6rem;
+      }
+
+      @media only screen and (max-width: $bp-mediam) {
+        padding: 0 2rem;
+      }
+
     i{
         cursor: pointer;
     }
 
     &-nav{
+        @media only screen and (max-width: $bp-small) {
+            display: none;
+          }
 
         &__items{
             display: flex;
@@ -222,8 +326,9 @@
 ///////////////////////////// 
 
 .heading-secondary{
-    font-size: 2.3rem;
+    font-size: 2.5rem;
     font-weight: 300;
+    text-transform: capitalize;
 }
 
 
@@ -231,7 +336,7 @@
     font-size: 1.5rem;
 
     &>*:not(:last-child){
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
     
     &-back{
@@ -327,3 +432,31 @@
 }
 
 
+//////////////////////////////////////////////// 
+/////////////////////////////////////////////// 
+////////// cart style ///////////////////////// 
+////////////////////////////////////////////////
+.cart{
+    padding: 2rem 40rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-grey-light-1);
+    &-item{
+        width: 60%;
+        img{
+            width: 9rem;
+            height: 12rem;
+        }
+
+        p{
+            font-size: 1.6rem;
+        }
+
+
+        &-heading{
+            font-size: 2.5rem;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+    }
+}

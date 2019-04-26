@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Header from './components/layout/Header/Header'
 import WomenCloth from './Pages/WomenCloth'
-
+import Cart from './Pages/CartPage'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 class  App extends Component{
   render(){
@@ -10,7 +10,7 @@ class  App extends Component{
           <div className="App">
             <Header/>
             <Route path={`${process.env.PUBLIC_URL}/`} 
-            render ={() => <WomenCloth/>}/>
+            render ={() => <Cart/>}/>
           </div>
       </Router>
     );
